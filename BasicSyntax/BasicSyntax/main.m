@@ -92,6 +92,17 @@ int main(int argc, const char * argv[]) {
         NSArray *twoWordVillains = [moreVillains filteredArrayUsingPredicate:predicate];
         NSLog(@"Villains with multiple word names: %@", [twoWordVillains componentsJoinedByString:@", "]);
         
+        // Key Paths
+        NSArray *numbers = [NSArray arrayWithObjects:@1, @2, @3, @4, @5, nil];
+        NSNumber *sum = [numbers valueForKeyPath:@"@sum.self"];
+        NSNumber *avg = [numbers valueForKeyPath:@"@avg.self"];
+        NSNumber *min = [numbers valueForKeyPath:@"@min.self"];
+        NSNumber *max = [numbers valueForKeyPath:@"@max.self"];
+        NSLog(@"Total: %ld", (long)[sum integerValue]);
+        NSLog(@"Avg: %ld", (long)[avg integerValue]);
+        NSLog(@"Min: %ld", (long)[min integerValue]);
+        NSLog(@"Max: %ld", (long)[max integerValue]);
+        
     }
     return 0;
 }
