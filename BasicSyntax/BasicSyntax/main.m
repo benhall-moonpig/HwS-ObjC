@@ -179,5 +179,37 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", contents);
     }
     
+#pragma mark Blocks
+    // Equivalent to swift closures
+    /*
+     returnType* (^blockVariableName)(inputType *) = ^(inputType *inputVarName){ implementation };
+     
+     ReturnType and inputType pointer if non void types.
+    */
+    
+    // No return type or arguments
+    void (^helloWorldBlock)(void) = ^{
+        NSLog(@"\nHello World!");
+    };
+    
+    helloWorldBlock();
+    
+    // Return type and arguments
+    NSString* (^helloNameBlock)(NSString *) = ^(NSString *name){
+        return [NSString stringWithFormat:@"Hello %@!", name];
+    };
+    
+    NSLog(@"\n%@", helloNameBlock(@"Ben"));
+    
+    // Typedef (typealias)
+    typedef NSString* (^MyBlock)(NSString*);
+    
+    MyBlock newBlock = ^(NSString *input) {
+        return [NSString stringWithFormat:@"TypeDeffed block with argument: %@", input];
+    };
+    
+    NSLog(@"\n%@", newBlock(@"An input."));
+    
+    
     return 0;
 }
