@@ -156,6 +156,20 @@ int main(int argc, const char * argv[]) {
     NSValue *rect = [NSValue valueWithRect:NSMakeRect(0, 0, 0, 0)];
     NSLog(@"%@", rect);
     
+#pragma mark NSObject
+    NSMutableArray *people = [
+        @[@"Taylor Swift", @"Adele Adkins", @"Freddie Mercury"] mutableCopy
+    ];
+    
+    NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
+    if ([people isKindOfClass:[NSArray class]]) {
+        if ([people respondsToSelector:@selector(removeAllObjects)]) {
+            NSLog(@"\nRemoving People...");
+            [people performSelector:@selector(removeAllObjects)];
+        }
+    }
+    NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
+    
     
     return 0;
 }
