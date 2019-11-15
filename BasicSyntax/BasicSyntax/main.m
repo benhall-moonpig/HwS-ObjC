@@ -63,6 +63,14 @@ int main(int argc, const char * argv[]) {
         NSArray *sortedVillains = [[[villains reverseObjectEnumerator] allObjects] sortedArrayUsingSelector:@selector(compare:)];
         NSLog(@"%@", [sortedVillains componentsJoinedByString:@", "]);
         
+        // Functional Approach
+        // Foreach ish
+        NSArray *intArray = @[@1, @2, @3];
+        NSLog(@"%@", intArray);
+        [intArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSLog(@"%ld", (long)[obj intValue] * 2);
+        }];
+        
         
         
     }
