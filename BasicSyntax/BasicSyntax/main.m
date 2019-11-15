@@ -65,6 +65,8 @@ int main(int argc, const char * argv[]) {
         
         // Functional Approach
         // Foreach ish
+        
+        // Block
         NSArray *intArray = @[@1, @2, @3];
         NSLog(@"%@", intArray);
         [intArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -81,6 +83,14 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@ just a minor sub-villain", obj);
             }
         }];
+        
+        // Predicate (like .filter())
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *bindings) {
+            return [[obj componentsSeparatedByString:@" "] count] > 1;
+        }];
+        
+        NSArray *twoWordVillains = [moreVillains filteredArrayUsingPredicate:predicate];
+        NSLog(@"Villains with multiple word names: %@", [twoWordVillains componentsJoinedByString:@", "]);
         
     }
     return 0;
