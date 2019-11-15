@@ -124,7 +124,22 @@ int main(int argc, const char * argv[]) {
             NSString *forceParty = [[key lowercaseString] isEqualToString:@"red"] ? @"Dark" : @"Light";
             NSLog(@"These Characters are powerful with the %@ side of the force:\n%@", forceParty, [saberColours[key] componentsJoinedByString:@", "]);
         }
-        
     }
+    
+#pragma mark  Sets
+    // Immutable
+    NSSet *exampleSet = [NSSet setWithObjects:@1, @2, @3, @4, nil];
+    NSLog(@"\nImutable set contains %ld entries:\n%@", (long)[exampleSet count], [exampleSet allObjects]);
+    
+    // Mutable
+    NSMutableSet *exampleMutableSet = [NSMutableSet setWithObjects:@1, @2, @3, @4, nil];
+    [exampleMutableSet addObject:@5];
+    NSLog(@"\nMutable set contains %ld entries:\n%@", (long)[exampleMutableSet count], [exampleMutableSet allObjects]);
+    NSCountedSet *exampleCountedSet = [NSCountedSet setWithObjects:@1, @2, @3, @4, nil];
+    [exampleCountedSet addObjectsFromArray:@[@1, @1, @4]];
+    NSLog(@"\nValue 1 appears in the counted set %ld times", (long)[exampleCountedSet countForObject:@1]);
+    
+    
+    
     return 0;
 }
