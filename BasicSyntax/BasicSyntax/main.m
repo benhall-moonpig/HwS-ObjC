@@ -103,6 +103,28 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Min: %ld", (long)[min integerValue]);
         NSLog(@"Max: %ld", (long)[max integerValue]);
         
+#pragma mark Dictionaries
+        // Immutable Dictionaries
+        NSDictionary *saberColours = @{
+            @"Blue": @[@"Padawan Anakin", @"Padawan Luke", @"Obi-Wan Kenobi", @"Rey"],
+            @"Green": @[@"Yoda", @"Qui-Gon Ginn", @"Jedi Master Luke"],
+            @"Red": @[@"Emperor Palpatine", @"Darth Vader", @"Kylo Ren", @"Count Dooku", @"Darth Maul"],
+            @"Purple": @[@"Mace Windu"]
+        };
+        
+        for (NSString *key in saberColours) {
+            NSString *forceParty = [[key lowercaseString] isEqualToString:@"red"] ? @"Dark" : @"Light";
+            NSLog(@"These Characters are powerful with the %@ side of the force:\n%@", forceParty, [saberColours[key] componentsJoinedByString:@", "]);
+        }
+        
+        // Mutable Dictionaries
+        NSMutableDictionary *saberColours2 = [saberColours mutableCopy];
+        [saberColours2 removeObjectForKey:@"Purple"];
+        for (NSString *key in saberColours) {
+            NSString *forceParty = [[key lowercaseString] isEqualToString:@"red"] ? @"Dark" : @"Light";
+            NSLog(@"These Characters are powerful with the %@ side of the force:\n%@", forceParty, [saberColours[key] componentsJoinedByString:@", "]);
+        }
+        
     }
     return 0;
 }
