@@ -59,6 +59,10 @@ int main(int argc, const char * argv[]) {
         [villains removeLastObject];
         NSLog(@"%@", [villains componentsJoinedByString:@", "]);
         
+        // Sorting
+        NSArray *sortedVillains = [[[villains reverseObjectEnumerator] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+        NSLog(@"%@", [sortedVillains componentsJoinedByString:@", "]);
+        
         
         
     }
