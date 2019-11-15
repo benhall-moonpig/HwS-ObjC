@@ -45,7 +45,19 @@ int main(int argc, const char * argv[]) {
         
         // Mutable Arrays
         NSMutableArray *villains = [@[@"Darth Vader", @"Palpatine", @"Snoke"] mutableCopy];
+        NSLog(@"%@", [villains componentsJoinedByString:@", "]);
         
+        [villains addObject:@"Kylo Ren"];
+        NSLog(@"%@", [villains componentsJoinedByString:@", "]);
+        
+        [villains insertObject:@"Jar Jar Binks" atIndex:0];
+        NSLog(@"%@", [villains componentsJoinedByString:@", "]);
+        
+        [villains removeObject:@"Darth Vader"];
+        NSLog(@"%@", [villains componentsJoinedByString:@", "]);
+        
+        [villains removeLastObject];
+        NSLog(@"%@", [villains componentsJoinedByString:@", "]);
         
         
         
