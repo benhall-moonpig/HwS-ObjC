@@ -151,6 +151,11 @@ int main(int argc, const char * argv[]) {
     };
     NSLog(@"\nGenericDictionary:\n%@", genericDictionary);
     
+#pragma mark NSValue
+    // Allows storing structs (eg. CGRect, CGSize, CGPoint) in arrays)
+    NSValue *rect = [NSValue valueWithRect:NSMakeRect(0, 0, 0, 0)];
+    NSLog(@"%@", rect);
+    
     
     return 0;
 }
