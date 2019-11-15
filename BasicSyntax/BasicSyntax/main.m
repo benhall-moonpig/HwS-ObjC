@@ -35,6 +35,10 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Character at Index 1 %@", characters[1]);
         NSLog(@"Character at Index 0 %@", [characters objectAtIndex:0]);
         
+        NSLog(@"Number of characters in array: %ld", (long)[characters count]);
+        NSLog(@"Index of Character 'Han' in character array is %ld", (long)[characters indexOfObject:@"Han"]);
+        NSLog(@"All characters in the array are: %@", [characters componentsJoinedByString:@", "]);
+        
         
     }
     return 0;
