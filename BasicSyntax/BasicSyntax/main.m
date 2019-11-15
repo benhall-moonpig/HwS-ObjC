@@ -71,7 +71,16 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%ld", (long)[obj intValue] * 2);
         }];
         
-        
+        NSArray *moreVillains = @[@"Darth Vader", @"Snoke", @"Palpatine", @"Jar Jar Binks", @"Kylo"];
+        NSLog(@"Searching for the true Star Wars evil mastermind:");
+        [moreVillains enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([obj isEqualToString:@"Jar Jar Binks"]) {
+                NSLog(@"%@ is the real evil mastermind. Stopping the search.", obj);
+                *stop=YES;
+            } else {
+                NSLog(@"%@ just a minor sub-villain", obj);
+            }
+        }];
         
     }
     return 0;
