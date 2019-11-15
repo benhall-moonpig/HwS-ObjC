@@ -220,6 +220,18 @@ int main(int argc, const char * argv[]) {
 
     NSLog(@"%@", printMeaningOfLife());
     
+    // Reference Cycles
+    // ObjC doesn't have capture lists (e.g. [unowned self]), but has __weak qualifier.
+    /*
+     MyViewController * __weak weakSelf = self;
+
+     NSString* (^myBlock)(void) = ^{
+         return [weakSelf runSomeMethod];
+     };
+     
+     Excerpt From: Paul Hudson. “Objective-C for Swift Developers”. Apple Books.
+
+     */
     
     return 0;
 }
