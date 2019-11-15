@@ -210,6 +210,16 @@ int main(int argc, const char * argv[]) {
     
     NSLog(@"\n%@", newBlock(@"An input."));
     
+    // Capture
+    NSInteger __block number = 0;
+
+    NSString* (^printMeaningOfLife)(void) = ^{
+        number = 42;
+        return [NSString stringWithFormat:@"How many roads must a man walk down? %ld.", number];
+    };
+
+    NSLog(@"%@", printMeaningOfLife());
+    
     
     return 0;
 }
