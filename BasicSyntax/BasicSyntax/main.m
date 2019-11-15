@@ -22,22 +22,28 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%d", [boolNum intValue]);
         
 #pragma mark Arrays
-        NSArray *characters = @[@"Chewie", @"Han", @"Leia"];
-        for (NSString *c in characters) {
+        
+        // Immutable Arrays
+        NSArray *heroes = @[@"Chewie", @"Han", @"Leia"];
+        for (NSString *c in heroes) {
             NSLog(@"%@", c);
         }
         
         NSLog(@"Characters in Reverse");
-        for (NSString *c in [characters reverseObjectEnumerator]) {
+        for (NSString *c in [heroes reverseObjectEnumerator]) {
             NSLog(@"%@", c);
         }
         
-        NSLog(@"Character at Index 1 %@", characters[1]);
-        NSLog(@"Character at Index 0 %@", [characters objectAtIndex:0]);
+        // Indexing
+        NSLog(@"Character at Index 1 %@", heroes[1]);
+        NSLog(@"Character at Index 0 %@", [heroes objectAtIndex:0]);
         
-        NSLog(@"Number of characters in array: %ld", (long)[characters count]);
-        NSLog(@"Index of Character 'Han' in character array is %ld", (long)[characters indexOfObject:@"Han"]);
-        NSLog(@"All characters in the array are: %@", [characters componentsJoinedByString:@", "]);
+        // Operations
+        NSLog(@"Number of characters in array: %ld", (long)[heroes count]);
+        NSLog(@"Index of Character 'Han' in character array is %ld", (long)[heroes indexOfObject:@"Han"]);
+        NSLog(@"All characters in the array are: %@", [heroes componentsJoinedByString:@", "]);
+        
+        
         
         
     }
