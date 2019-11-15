@@ -139,6 +139,17 @@ int main(int argc, const char * argv[]) {
     [exampleCountedSet addObjectsFromArray:@[@1, @1, @4]];
     NSLog(@"\nValue 1 appears in the counted set %ld times", (long)[exampleCountedSet countForObject:@1]);
     
+#pragma mark Generics
+    // This should work?
+//    NSArray<NSNumber *> *numbers = @[@42, @556, @69, @3.141592];
+//    for (NSString *number in numbers) {
+//        NSLog(@"%@ is %ld letters.", number, [number length]);
+//    }
+    
+    NSDictionary<NSString *, NSNumber *> *genericDictionary = @{
+        @"Key": @42
+    };
+    NSLog(@"\nGenericDictionary:\n%@", genericDictionary);
     
     
     return 0;
