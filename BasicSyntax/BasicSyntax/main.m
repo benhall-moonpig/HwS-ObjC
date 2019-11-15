@@ -27,6 +27,15 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", c);
         }
         
+        NSLog(@"Characters in Reverse");
+        for (NSString *c in [characters reverseObjectEnumerator]) {
+            NSLog(@"%@", c);
+        }
+        
+        NSLog(@"Character at Index 1 %@", characters[1]);
+        NSLog(@"Character at Index 0 %@", [characters objectAtIndex:0]);
+        
+        
     }
     return 0;
 }
