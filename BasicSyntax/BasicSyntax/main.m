@@ -43,6 +43,9 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Index of Character 'Han' in character array is %ld", (long)[heroes indexOfObject:@"Han"]);
         NSLog(@"All characters in the array are: %@", [heroes componentsJoinedByString:@", "]);
         
+        // Mutable Arrays
+        NSMutableArray *villains = [@[@"Darth Vader", @"Palpatine", @"Snoke"] mutableCopy];
+        
         
         
         
