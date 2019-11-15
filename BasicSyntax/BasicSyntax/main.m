@@ -170,6 +170,14 @@ int main(int argc, const char * argv[]) {
     }
     NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
     
+#pragma mark NSError
+    NSError *error;
+    NSString *contents = [NSString stringWithContentsOfFile:@"hello.txt" usedEncoding:nil error:&error];
+    if (error) {
+        NSLog(@"\nERROR: %@", [error localizedDescription]);
+    } else {
+        NSLog(@"%@", contents);
+    }
     
     return 0;
 }
