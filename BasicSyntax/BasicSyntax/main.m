@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"Hello, World!");
         
-#pragma mark NSNumber
+    #pragma mark NSNumber
         NSNumber *doubleNum = @M_PI;
         NSNumber *intNum = @10;
         NSNumber *boolNum = @YES;
@@ -21,7 +22,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%ld", (long)[intNum integerValue]);
         NSLog(@"%d", [boolNum intValue]);
         
-#pragma mark Arrays
+    #pragma mark Arrays
         
         // Immutable Arrays
         NSArray *heroes = @[@"Chewie", @"Han", @"Leia"];
@@ -103,7 +104,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Min: %ld", (long)[min integerValue]);
         NSLog(@"Max: %ld", (long)[max integerValue]);
         
-#pragma mark Dictionaries
+    #pragma mark Dictionaries
         // Immutable Dictionaries
         NSDictionary *saberColours = @{
             @"Blue": @[@"Padawan Anakin", @"Padawan Luke", @"Obi-Wan Kenobi", @"Rey"],
@@ -124,114 +125,118 @@ int main(int argc, const char * argv[]) {
             NSString *forceParty = [[key lowercaseString] isEqualToString:@"red"] ? @"Dark" : @"Light";
             NSLog(@"These Characters are powerful with the %@ side of the force:\n%@", forceParty, [saberColours[key] componentsJoinedByString:@", "]);
         }
-    }
-    
-#pragma mark  Sets
-    // Immutable
-    NSSet *exampleSet = [NSSet setWithObjects:@1, @2, @3, @4, nil];
-    NSLog(@"\nImutable set contains %ld entries:\n%@", (long)[exampleSet count], [exampleSet allObjects]);
-    
-    // Mutable
-    NSMutableSet *exampleMutableSet = [NSMutableSet setWithObjects:@1, @2, @3, @4, nil];
-    [exampleMutableSet addObject:@5];
-    NSLog(@"\nMutable set contains %ld entries:\n%@", (long)[exampleMutableSet count], [exampleMutableSet allObjects]);
-    NSCountedSet *exampleCountedSet = [NSCountedSet setWithObjects:@1, @2, @3, @4, nil];
-    [exampleCountedSet addObjectsFromArray:@[@1, @1, @4]];
-    NSLog(@"\nValue 1 appears in the counted set %ld times", (long)[exampleCountedSet countForObject:@1]);
-    
-#pragma mark Generics
-    // This should work?
-//    NSArray<NSNumber *> *numbers = @[@42, @556, @69, @3.141592];
-//    for (NSString *number in numbers) {
-//        NSLog(@"%@ is %ld letters.", number, [number length]);
-//    }
-    
-    NSDictionary<NSString *, NSNumber *> *genericDictionary = @{
-        @"Key": @42
-    };
-    NSLog(@"\nGenericDictionary:\n%@", genericDictionary);
-    
-#pragma mark NSValue
-    // Allows storing structs (eg. CGRect, CGSize, CGPoint) in arrays)
-    NSValue *rect = [NSValue valueWithRect:NSMakeRect(0, 0, 0, 0)];
-    NSLog(@"%@", rect);
-    
-#pragma mark NSObject
-    NSMutableArray *people = [
-        @[@"Taylor Swift", @"Adele Adkins", @"Freddie Mercury"] mutableCopy
-    ];
-    
-    NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
-    if ([people isKindOfClass:[NSArray class]]) {
-        if ([people respondsToSelector:@selector(removeAllObjects)]) {
-            NSLog(@"\nRemoving People...");
-            [people performSelector:@selector(removeAllObjects)];
+        
+    #pragma mark  Sets
+        // Immutable
+        NSSet *exampleSet = [NSSet setWithObjects:@1, @2, @3, @4, nil];
+        NSLog(@"\nImutable set contains %ld entries:\n%@", (long)[exampleSet count], [exampleSet allObjects]);
+        
+        // Mutable
+        NSMutableSet *exampleMutableSet = [NSMutableSet setWithObjects:@1, @2, @3, @4, nil];
+        [exampleMutableSet addObject:@5];
+        NSLog(@"\nMutable set contains %ld entries:\n%@", (long)[exampleMutableSet count], [exampleMutableSet allObjects]);
+        NSCountedSet *exampleCountedSet = [NSCountedSet setWithObjects:@1, @2, @3, @4, nil];
+        [exampleCountedSet addObjectsFromArray:@[@1, @1, @4]];
+        NSLog(@"\nValue 1 appears in the counted set %ld times", (long)[exampleCountedSet countForObject:@1]);
+        
+    #pragma mark Generics
+        // This should work?
+    //    NSArray<NSNumber *> *numbers = @[@42, @556, @69, @3.141592];
+    //    for (NSString *number in numbers) {
+    //        NSLog(@"%@ is %ld letters.", number, [number length]);
+    //    }
+        
+        NSDictionary<NSString *, NSNumber *> *genericDictionary = @{
+            @"Key": @42
+        };
+        NSLog(@"\nGenericDictionary:\n%@", genericDictionary);
+        
+    #pragma mark NSValue
+        // Allows storing structs (eg. CGRect, CGSize, CGPoint) in arrays)
+        NSValue *rect = [NSValue valueWithRect:NSMakeRect(0, 0, 0, 0)];
+        NSLog(@"%@", rect);
+        
+    #pragma mark NSObject
+        NSMutableArray *people = [
+            @[@"Taylor Swift", @"Adele Adkins", @"Freddie Mercury"] mutableCopy
+        ];
+        
+        NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
+        if ([people isKindOfClass:[NSArray class]]) {
+            if ([people respondsToSelector:@selector(removeAllObjects)]) {
+                NSLog(@"\nRemoving People...");
+                [people performSelector:@selector(removeAllObjects)];
+            }
         }
+        NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
+        
+    #pragma mark NSError
+        NSError *error;
+        NSString *contents = [NSString stringWithContentsOfFile:@"hello.txt" usedEncoding:nil error:&error];
+        if (error) {
+            NSLog(@"\nERROR: %@", [error localizedDescription]);
+        } else {
+            NSLog(@"%@", contents);
+        }
+        
+    #pragma mark Blocks
+        // Equivalent to swift closures
+        /*
+         returnType* (^blockVariableName)(inputType *) = ^(inputType *inputVarName){ implementation };
+         
+         ReturnType and inputType pointer if non void types.
+        */
+        
+        // No return type or arguments
+        void (^helloWorldBlock)(void) = ^{
+            NSLog(@"\nHello World!");
+        };
+        
+        helloWorldBlock();
+        
+        // Return type and arguments
+        NSString* (^helloNameBlock)(NSString *) = ^(NSString *name){
+            return [NSString stringWithFormat:@"Hello %@!", name];
+        };
+        
+        NSLog(@"\n%@", helloNameBlock(@"Ben"));
+        
+        // Typedef (typealias)
+        typedef NSString* (^MyBlock)(NSString*);
+        
+        MyBlock newBlock = ^(NSString *input) {
+            return [NSString stringWithFormat:@"TypeDeffed block with argument: %@", input];
+        };
+        
+        NSLog(@"\n%@", newBlock(@"An input."));
+        
+        // Capture
+        NSInteger __block number = 0;
+
+        NSString* (^printMeaningOfLife)(void) = ^{
+            number = 42;
+            return [NSString stringWithFormat:@"How many roads must a man walk down? %ld.", number];
+        };
+
+        NSLog(@"%@", printMeaningOfLife());
+        
+        // Reference Cycles
+        // ObjC doesn't have capture lists (e.g. [unowned self]), but has __weak qualifier.
+        /*
+         MyViewController * __weak weakSelf = self;
+
+         NSString* (^myBlock)(void) = ^{
+             return [weakSelf runSomeMethod];
+         };
+         
+         Excerpt From: Paul Hudson. “Objective-C for Swift Developers”. Apple Books.
+
+         */
+        
+        #pragma mark Classes
+        Person *person = [Person new];
+        [person printGreeting];
+             
     }
-    NSLog(@"\nPeople Array contains:\n%@", [people componentsJoinedByString:@", "]);
-    
-#pragma mark NSError
-    NSError *error;
-    NSString *contents = [NSString stringWithContentsOfFile:@"hello.txt" usedEncoding:nil error:&error];
-    if (error) {
-        NSLog(@"\nERROR: %@", [error localizedDescription]);
-    } else {
-        NSLog(@"%@", contents);
-    }
-    
-#pragma mark Blocks
-    // Equivalent to swift closures
-    /*
-     returnType* (^blockVariableName)(inputType *) = ^(inputType *inputVarName){ implementation };
-     
-     ReturnType and inputType pointer if non void types.
-    */
-    
-    // No return type or arguments
-    void (^helloWorldBlock)(void) = ^{
-        NSLog(@"\nHello World!");
-    };
-    
-    helloWorldBlock();
-    
-    // Return type and arguments
-    NSString* (^helloNameBlock)(NSString *) = ^(NSString *name){
-        return [NSString stringWithFormat:@"Hello %@!", name];
-    };
-    
-    NSLog(@"\n%@", helloNameBlock(@"Ben"));
-    
-    // Typedef (typealias)
-    typedef NSString* (^MyBlock)(NSString*);
-    
-    MyBlock newBlock = ^(NSString *input) {
-        return [NSString stringWithFormat:@"TypeDeffed block with argument: %@", input];
-    };
-    
-    NSLog(@"\n%@", newBlock(@"An input."));
-    
-    // Capture
-    NSInteger __block number = 0;
-
-    NSString* (^printMeaningOfLife)(void) = ^{
-        number = 42;
-        return [NSString stringWithFormat:@"How many roads must a man walk down? %ld.", number];
-    };
-
-    NSLog(@"%@", printMeaningOfLife());
-    
-    // Reference Cycles
-    // ObjC doesn't have capture lists (e.g. [unowned self]), but has __weak qualifier.
-    /*
-     MyViewController * __weak weakSelf = self;
-
-     NSString* (^myBlock)(void) = ^{
-         return [weakSelf runSomeMethod];
-     };
-     
-     Excerpt From: Paul Hudson. “Objective-C for Swift Developers”. Apple Books.
-
-     */
-    
     return 0;
 }
