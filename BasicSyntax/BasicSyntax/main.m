@@ -234,9 +234,17 @@ int main(int argc, const char * argv[]) {
          */
         
         #pragma mark Classes
+        // Instance creation
         Person *person = [Person new];
+        
+        // Calling instance methods
         [person printGreeting:@"Welcome!"];
         [person printGreetingTo:@"Ben!" atTimeOfDay:@"afternoon"];
+        
+        // Calling static methods
+        [Person genericGreeting];
+        
+        
              
     }
     return 0;

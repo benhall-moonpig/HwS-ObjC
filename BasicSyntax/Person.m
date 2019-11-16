@@ -18,5 +18,8 @@
     NSLog(@"Good %@, %@", time, name);
 }
 
++ (void)genericGreeting {
+    NSLog(@"Hello World!");
+}
 
 @end
