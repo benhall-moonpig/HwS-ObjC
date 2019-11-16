@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-void printWord(NSString *word, NSMutableArray<NSString *> *usedLetters) {
+void printWord(NSString *word, NSMutableSet<NSString *> *usedLetters) {
     printf("\nWord: ");
     
     // Missing letters tracking bool
@@ -50,7 +50,8 @@ void printWord(NSString *word, NSMutableArray<NSString *> *usedLetters) {
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *word = @"RHYTHM";
-        NSMutableArray<NSString*> *usedLetters = [NSMutableArray arrayWithCapacity:8];
+        //NSMutableArray<NSString*> *usedLetters = [NSMutableArray arrayWithCapacity:8];
+        NSMutableSet<NSString*> *usedLetters = [NSMutableSet setWithCapacity:26];
         
         printf("Welcome to Hangman!\n");
         printf("Press a letter to guess, or Ctrl+C to quit.\n");
