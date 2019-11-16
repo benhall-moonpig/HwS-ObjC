@@ -10,6 +10,16 @@
 
 @implementation Person
 
+/* Property ivar synthesising name overrid
+ 
+@synthesize age = personAge;
+
+OR sometimes these:
+@synthesize age; // "Synthesize the name property as name ivar". Really bad idea.
+@synthesize age = _age; // "Synthesize the name property as the _name ivar". Common with custom getter and setter.
+
+*/
+
 - (void)greetSelf {
     NSLog(@"Welcome, %@", name);
 }
@@ -23,7 +33,14 @@
 }
 
 - (void)printAge {
+    // Dot syntax
     NSLog(@"%@ is age %ld", name, self.age);
+    // Bracket syntax
+    // NSLog(@"%@ is age %ld", name, [self age]);
+    // Synthesised ivar syntax
+    // NSLog(@"%@ is age %ld", name, _age);
+    // Synthesised ivar syntax (with synthesised keyword in .m)
+    // NSLog(@"%@ is age %ld", name, personAge);
 }
 
 + (void)genericGreeting {
