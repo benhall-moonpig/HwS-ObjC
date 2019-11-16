@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @property (atomic, readwrite) NSInteger age;
+@property (class) NSString *species;
 
 - (void)greetSelf;
 

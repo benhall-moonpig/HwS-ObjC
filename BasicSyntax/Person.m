@@ -63,4 +63,13 @@ OR sometimes these:
     NSLog(@"Hello World!");
 }
 
+#pragma mark Class property creation
+static NSString *_species = @"Human";
++ (NSString *)species {
+    return _species;
+}
++ (void)setSpecies:(NSString *)species {
+    _species = species;
+}
+
 @end

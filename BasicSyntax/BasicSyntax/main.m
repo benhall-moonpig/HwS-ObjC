@@ -252,6 +252,9 @@ int main(int argc, const char * argv[]) {
         person.age = 30;
         [person printAge];
         
+        // Class property
+        NSLog(@"%@, is species %@", person->name, Person.species);
+        
              
     }
     return 0;
