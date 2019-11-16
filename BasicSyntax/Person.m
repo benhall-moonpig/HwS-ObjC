@@ -20,6 +20,18 @@ OR sometimes these:
 
 */
 
+@synthesize age = _age;
+
+- (NSInteger)age {
+    NSLog(@"Reading age!");
+    return _age;
+}
+
+- (void)setAge:(NSInteger)newAge {
+    NSLog(@"Writing age!");
+    _age = newAge;
+}
+
 - (void)greetSelf {
     NSLog(@"Welcome, %@", name);
 }
