@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)printGreeting:(NSString*)greeting;
 
+- (void)printGreetingTo:(NSString*)name atTimeOfDay:(NSString*)time;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,4 +14,9 @@
     NSLog(@"%@", greeting);
 }
 
+- (void)printGreetingTo:(NSString *)name atTimeOfDay:(NSString *)time {
+    NSLog(@"Good %@, %@", time, name);
+}
+
+
 @end
