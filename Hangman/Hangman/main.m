@@ -10,7 +10,23 @@
 
 
 void printWord(NSString *word, NSMutableArray<NSString *> *usedLetters) {
-    // Code
+    printf("\nWord: ");
+    
+    // Missing letters tracking bool
+    BOOL missingLetters = NO;
+    
+    // Check for if letters missing
+    for (NSInteger i=0; i < [word length]; ++i) {
+        unichar letter = [word characterAtIndex:i];
+        NSString *letterString = [NSString stringWithFormat:@"%C", letter];
+        
+        if ([usedLetters containsObject:letterString]) {
+            printf("%C", letter);
+        } else {
+            printf("_");
+            missingLetters = YES; // Continue game
+        }
+    }
 }
 
 int main(int argc, const char * argv[]) {
