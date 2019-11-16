@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0E1B8E6237EC2B300F56110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E1B8E5237EC2B300F56110 /* main.m */; };
 		D0E1B901238046CE00F56110 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E1B900238046CE00F56110 /* Person.m */; };
+		D0E1B904238064DA00F56110 /* NSString+Trimming.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E1B903238064DA00F56110 /* NSString+Trimming.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		D0E1B8E5237EC2B300F56110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0E1B8FF238046CE00F56110 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		D0E1B900238046CE00F56110 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		D0E1B902238064DA00F56110 /* NSString+Trimming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Trimming.h"; sourceTree = "<group>"; };
+		D0E1B903238064DA00F56110 /* NSString+Trimming.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trimming.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +47,6 @@
 		D0E1B8D9237EC2B300F56110 = {
 			isa = PBXGroup;
 			children = (
-				D0E1B8FF238046CE00F56110 /* Person.h */,
-				D0E1B900238046CE00F56110 /* Person.m */,
 				D0E1B8E4237EC2B300F56110 /* BasicSyntax */,
 				D0E1B8E3237EC2B300F56110 /* Products */,
 			);
@@ -63,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				D0E1B8E5237EC2B300F56110 /* main.m */,
+				D0E1B8FF238046CE00F56110 /* Person.h */,
+				D0E1B900238046CE00F56110 /* Person.m */,
+				D0E1B902238064DA00F56110 /* NSString+Trimming.h */,
+				D0E1B903238064DA00F56110 /* NSString+Trimming.m */,
 			);
 			path = BasicSyntax;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E1B901238046CE00F56110 /* Person.m in Sources */,
+				D0E1B904238064DA00F56110 /* NSString+Trimming.m in Sources */,
 				D0E1B8E6237EC2B300F56110 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
