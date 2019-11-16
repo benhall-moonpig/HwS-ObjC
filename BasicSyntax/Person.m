@@ -8,6 +8,10 @@
 
 #import "Person.h"
 
+@interface Person ()
+@property float height;
+@end
+
 @implementation Person
 
 /* Property ivar synthesising name overrid
