@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic, readwrite) NSInteger age;
 @property (class) NSString *species;
 
+- (instancetype)initWithAge:(NSInteger)age;
+
 - (void)greetSelf;
 
 - (void)printGreeting:(NSString*)greeting;

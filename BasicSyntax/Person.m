@@ -72,4 +72,12 @@ static NSString *_species = @"Human";
     _species = species;
 }
 
+#pragma mark Init
+- (instancetype)initWithAge:(NSInteger)age {
+    if (self = [super init]) {
+        _age = age;
+    }
+    return self;
+}
+
 @end

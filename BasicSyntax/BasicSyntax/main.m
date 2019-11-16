@@ -255,6 +255,10 @@ int main(int argc, const char * argv[]) {
         // Class property
         NSLog(@"%@, is species %@", person->name, Person.species);
         
+        // Init
+        Person *oldPerson = [[Person alloc] initWithAge:900];
+        oldPerson->name = @"Yoda";
+        [oldPerson printAge];
              
     }
     return 0;
