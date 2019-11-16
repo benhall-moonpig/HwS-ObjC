@@ -10,8 +10,8 @@
 
 @implementation Person
 
-- (void)printGreeting {
-    NSLog(@"Hello!");
+- (void)printGreeting:(NSString*)greeting {
+    NSLog(@"%@", greeting);
 }
 
 @end

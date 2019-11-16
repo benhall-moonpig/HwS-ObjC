@@ -235,7 +235,7 @@ int main(int argc, const char * argv[]) {
         
         #pragma mark Classes
         Person *person = [Person new];
-        [person printGreeting];
+        [person printGreeting:@"Welcome!"];
              
     }
     return 0;
