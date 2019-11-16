@@ -27,6 +27,24 @@ void printWord(NSString *word, NSMutableArray<NSString *> *usedLetters) {
             missingLetters = YES; // Continue game
         }
     }
+    
+    // Game over or continue check
+    printf("\nGuesses: %ld/8\n", [usedLetters count]);
+    
+    if (missingLetters == NO) {
+        // Game Over
+        printf("Well done! You get to guess another day!\n");
+        exit(0);
+    }
+    
+    if ([usedLetters count] == 8) {
+        // Out of guesses!
+        printf("Oops, the hangman cometh! The word was %s.\n", [word cStringUsingEncoding:NSUTF8StringEncoding]);
+        exit(0);
+    }
+     
+    // Game is still going!
+    printf("Enter a letter: ");
 }
 
 int main(int argc, const char * argv[]) {
