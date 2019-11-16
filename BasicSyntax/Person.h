@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *name;
 }
 
-@property NSInteger age;
+@property (atomic, readwrite) NSInteger age;
 
 - (void)greetSelf;
 
