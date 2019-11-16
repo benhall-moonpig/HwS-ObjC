@@ -15,11 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *name;
 }
 
+@property NSInteger age;
+
 - (void)greetSelf;
 
 - (void)printGreeting:(NSString*)greeting;
 
 - (void)printGreetingTo:(NSString*)name atTimeOfDay:(NSString*)time;
+
+- (void)printAge;
 
 + (void)genericGreeting;
 

@@ -248,6 +248,9 @@ int main(int argc, const char * argv[]) {
         person->name = @"Luke";
         [person greetSelf];
         
+        // Properties
+        person.age = 30;
+        [person printAge];
         
              
     }

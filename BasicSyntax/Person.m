@@ -22,6 +22,10 @@
     NSLog(@"Good %@, %@", time, name);
 }
 
+- (void)printAge {
+    NSLog(@"%@ is age %ld", name, self.age);
+}
+
 + (void)genericGreeting {
     NSLog(@"Hello World!");
 }
