@@ -244,6 +244,10 @@ int main(int argc, const char * argv[]) {
         // Calling static methods
         [Person genericGreeting];
         
+        // Instance Variables (ivars)
+        person->name = @"Luke";
+        [person greetSelf];
+        
         
              
     }

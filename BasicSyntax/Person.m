@@ -10,6 +10,10 @@
 
 @implementation Person
 
+- (void)greetSelf {
+    NSLog(@"Welcome, %@", name);
+}
+
 - (void)printGreeting:(NSString*)greeting {
     NSLog(@"%@", greeting);
 }

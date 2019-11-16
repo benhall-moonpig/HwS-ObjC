@@ -10,7 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject
+@interface Person : NSObject {
+    @public
+    NSString *name;
+}
+
+- (void)greetSelf;
 
 - (void)printGreeting:(NSString*)greeting;
 
