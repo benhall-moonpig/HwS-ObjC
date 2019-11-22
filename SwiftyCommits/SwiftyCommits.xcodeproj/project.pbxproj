@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D07C3983238841E9003F7470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D07C3982238841E9003F7470 /* main.m */; };
+		D07C398C23884239003F7470 /* SCApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D07C398B23884239003F7470 /* SCApp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		D07C397F238841E9003F7470 /* SwiftyCommits */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftyCommits; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C3982238841E9003F7470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D07C398A23884239003F7470 /* SCApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCApp.h; sourceTree = "<group>"; };
+		D07C398B23884239003F7470 /* SCApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCApp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,19 @@
 		D07C3981238841E9003F7470 /* SwiftyCommits */ = {
 			isa = PBXGroup;
 			children = (
+				D07C398923884221003F7470 /* App */,
 				D07C3982238841E9003F7470 /* main.m */,
 			);
 			path = SwiftyCommits;
+			sourceTree = "<group>";
+		};
+		D07C398923884221003F7470 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D07C398A23884239003F7470 /* SCApp.h */,
+				D07C398B23884239003F7470 /* SCApp.m */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07C3983238841E9003F7470 /* main.m in Sources */,
+				D07C398C23884239003F7470 /* SCApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
