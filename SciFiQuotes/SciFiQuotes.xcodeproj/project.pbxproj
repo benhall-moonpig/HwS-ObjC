@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D07C396823880867003F7470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D07C396723880867003F7470 /* main.m */; };
+		D07C3970238808DB003F7470 /* SFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D07C396F238808DB003F7470 /* SFApp.m */; };
+		D07C397523880900003F7470 /* SFQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = D07C397423880900003F7470 /* SFQuote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		D07C396423880867003F7470 /* SciFiQuotes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SciFiQuotes; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C396723880867003F7470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D07C396E238808DB003F7470 /* SFApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFApp.h; sourceTree = "<group>"; };
+		D07C396F238808DB003F7470 /* SFApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFApp.m; sourceTree = "<group>"; };
+		D07C397323880900003F7470 /* SFQuote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFQuote.h; sourceTree = "<group>"; };
+		D07C397423880900003F7470 /* SFQuote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFQuote.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,29 @@
 		D07C396623880867003F7470 /* SciFiQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				D07C3972238808ED003F7470 /* SFQuote */,
+				D07C3971238808E2003F7470 /* SFApp */,
 				D07C396723880867003F7470 /* main.m */,
 			);
 			path = SciFiQuotes;
+			sourceTree = "<group>";
+		};
+		D07C3971238808E2003F7470 /* SFApp */ = {
+			isa = PBXGroup;
+			children = (
+				D07C396E238808DB003F7470 /* SFApp.h */,
+				D07C396F238808DB003F7470 /* SFApp.m */,
+			);
+			path = SFApp;
+			sourceTree = "<group>";
+		};
+		D07C3972238808ED003F7470 /* SFQuote */ = {
+			isa = PBXGroup;
+			children = (
+				D07C397323880900003F7470 /* SFQuote.h */,
+				D07C397423880900003F7470 /* SFQuote.m */,
+			);
+			path = SFQuote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07C397523880900003F7470 /* SFQuote.m in Sources */,
+				D07C3970238808DB003F7470 /* SFApp.m in Sources */,
 				D07C396823880867003F7470 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
