@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SCApp : NSObject
 
-- (void)fetchCommitsForRepo:(NSString*)repo;
+- (void)fetchCommitsForRepo:(NSString*)repo filteredByAuthor:(NSString*)authorFilter;
 
 @end
 

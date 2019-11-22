@@ -10,7 +10,7 @@
 
 @implementation SCApp
 
-- (void)fetchCommitsForRepo:(NSString *)repo {
+- (void)fetchCommitsForRepo:(NSString *)repo filteredByAuthor:(NSString *)authorFilter{
     NSString *urlString = [NSString stringWithFormat:@"https://api.github.com/repos/%@/commits", repo];
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -34,8 +34,14 @@
     }
     
     for (NSDictionary *entry in json) {
-        NSString *author = entry[@"commit"][@"author"][@"name"];
+        NSString *author = entry[@"commit"][@"author"][@"name"] ?: @"Anonymous";
         NSString *message = entry[@"commit"][@"message"];
+        
+        if (![authorFilter isEqualToString:@""]) {
+            if (![author isEqualToString:authorFilter]) {
+                continue;
+            }
+        }
         
         message = [message stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
