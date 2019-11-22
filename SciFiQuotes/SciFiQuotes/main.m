@@ -12,17 +12,23 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *filePath = @"/Users/ben.hall/Code/src/Moonpig/HwS-ObjC/SciFiQuotes/quotes.txt";
         NSFileManager *fileManager = [NSFileManager defaultManager];
 
-        if ([fileManager fileExistsAtPath:filePath]) {
-            SFApp *app = [[SFApp alloc] initWithFile:filePath];
-            [app printQuote];
-        } else {
-            NSLog(@"File quotes.txt does not exist at expected path.");
-            exit(1);
+        while(YES) {
+            printf("\nPlease enter location of quotes.txt file:\n");
+            
+            char cstring[256];
+            scanf("%s", cstring);
+            
+            NSString *filePath = [NSString stringWithCString:cstring encoding:NSUTF8StringEncoding];
+            
+            if ([fileManager fileExistsAtPath:filePath]) {
+                SFApp *app = [[SFApp alloc] initWithFile:filePath];
+                [app printQuote];
+                break;
+            }
+            printf("ERROR: File quotes.txt does not exist at expected path.");
         }
-
     }
     return 0;
 }

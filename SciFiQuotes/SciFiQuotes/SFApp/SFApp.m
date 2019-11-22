@@ -12,7 +12,7 @@
 
 - (instancetype) initWithFile:(NSString*)filePath {
     if (self = [super init]) {
-        NSLog(@"Attempting to init with file at path:\n%@", filePath);
+        NSLog(@"Attempting to read contents of file at:\n%@", filePath);
         
         NSError *error;
         NSString *rawFileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
@@ -48,8 +48,8 @@
 - (void) printQuote {
     NSInteger randomIndex = arc4random_uniform((uint32_t)[self.quotes count]);
     SFQuote *quote = self.quotes[randomIndex];
-    printf("%s\n", [quote.quote cStringUsingEncoding:NSUTF8StringEncoding]);
-    printf("\t - %s\n", [quote.person cStringUsingEncoding:NSUTF8StringEncoding]);
+    printf("\n\n%s\n", [quote.quote cStringUsingEncoding:NSUTF8StringEncoding]);
+    printf("\t - %s\n\n\n", [quote.person cStringUsingEncoding:NSUTF8StringEncoding]);
 }
 
 @end
