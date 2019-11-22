@@ -85,6 +85,7 @@
 				D07C397B238841E9003F7470 /* Sources */,
 				D07C397C238841E9003F7470 /* Frameworks */,
 				D07C397D238841E9003F7470 /* CopyFiles */,
+				D07C398D23884893003F7470 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -126,6 +127,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D07C398D23884893003F7470 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp ${BUILT_PRODUCTS_DIR}/SwiftyCommits ${PROJECT_DIR}/bin\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D07C397B238841E9003F7470 /* Sources */ = {
